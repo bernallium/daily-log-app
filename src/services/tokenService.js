@@ -27,7 +27,7 @@ function getToken() {
   return token;
 }
 
-// Decodes the token, then extracts and returns the user
+// Decodes the token, then extracts and returns the user; if there's no user, returns null
 function getUserFromToken() {
   const token = getToken();
   return token ? JSON.parse(atob(token.split('.')[1])).user : null;
