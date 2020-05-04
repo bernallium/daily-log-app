@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import {Route, NavLink} from 'react-router-dom';
+import {Route, NavLink, Switch} from 'react-router-dom';
+import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
 
@@ -15,9 +16,17 @@ function App() {
           <NavLink to='/add'>Add</NavLink>
           &nbsp;&nbsp;&nbsp;
           <NavLink to='/login'>Log In</NavLink>
+          &nbsp;&nbsp;&nbsp;
+          <NavLink to='/signup'>Sign Up</NavLink>
         </nav>
       </header>
-      <Route path='/login' component={LoginPage}/>
+      <Switch>
+        <Route exact path='/' render={() =>
+          <h1>Home</h1>
+        } />
+        <Route path='/login' component={LoginPage}/>
+        <Route path='/signup' component={SignupPage}/>
+      </Switch>
     </div>
   );
 }
