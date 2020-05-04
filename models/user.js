@@ -14,8 +14,8 @@ const userSchema = new Schema({
   timestamps: true
 });
 
-Seriliazes user document (object) into JSON while first removing the password
-ie. Password will not be visible in JSON
+// Seriliazes user document (object) into JSON while first removing the password
+// ie. Password will not be visible in JSON
 userSchema.set('toJSON', {
   transform: function(doc, ret) {
     // Removes the password property when serializing doc to JSON
