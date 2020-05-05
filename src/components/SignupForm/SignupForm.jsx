@@ -11,29 +11,18 @@ class SignupForm extends Component {
     lastName: '',
     email: '',
     password: '',
-    // passwordConfirm: ''
+    passwordConfirm: ''
   };
 
   handleChange = (e) => {
     // console.log(`e.target.name = ${e.target.name}`)
     // console.log(`e.target.value = ${e.target.value}`);
     // this.props.updateMessage('');
-    this.setState({
-      [e.target.name]: e.target.value // Using ES2015 Computed Property Names
-    });
-  }
-
-  handleChange3 = e => {
     e.persist();
-    let formInvalid = !this.formRef.current.checkValidity(); // <--
     this.setState(state => ({
-      newSkill: {
-        ...state.newSkill,
-        [e.target.name]: e.target.value
-      },
-      formInvalid: formInvalid // Check validity of the entire form (need to use a form ref since it's not available within the event target in the handleChange method)
+      [e.target.name]: e.target.value
     }));
-  };
+  }
 
   handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +30,7 @@ class SignupForm extends Component {
       await userService.signup(this.state);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
-      // Successfully signed up - show 
+      // Successfully signed up - show Home page
       this.props.history.push('/');
     } catch (err) {
       // Invalid user data (probably duplicate email)
@@ -50,50 +39,8 @@ class SignupForm extends Component {
   }
 
   isFormInvalid() {
-    return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf);
+    return !(this.state.firstName && this.state.lastName && this.state.email && this.state.password === this.state.passwordConfirm);
   }
-
-//   render() {
-//     return (
-//       <div className='signup-form'>
-//         <h2>Sign Up</h2>
-//         <form className="form-horizontal" onSubmit={this.handleSubmit} >
-//           <div className="form-group">
-//             <div className="col-sm-12">
-//               <input type="text" className="form-control" placeholder="First Name" value={this.state.name} name="firstname" onChange={this.handleChange} />
-//             </div>
-//           </div>
-//           <div className="form-group">
-//             <div className="col-sm-12">
-//               <input type="text" className="form-control" placeholder="Last Name" value={this.state.name} name="lastname" onChange={this.handleChange} />
-//             </div>
-//           </div>
-//           <div className="form-group">
-//             <div className="col-sm-12">
-//               <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
-//             </div>
-//           </div>
-//           <div className="form-group">
-//             <div className="col-sm-12">
-//               <input type="password" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
-//             </div>
-//           </div>
-//           <div className="form-group">
-//             <div className="col-sm-12">
-//               <input type="password" className="form-control" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
-//             </div>
-//           </div>
-//           <div className="form-group">
-//             <div className="col-sm-12 text-center">
-//               {/* <Link to='/' className="btn btn-link" >Cancel</Link> */}
-//               <button className="btn btn-primary" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-//             </div>
-//           </div>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
 
   render() { 
     return (
@@ -124,17 +71,18 @@ class SignupForm extends Component {
             value={this.state.password}
             onChange={this.handleChange}/>
           </div>
-          {/* <div class="form-group">
+          <div class="form-group">
             <input type="password" class="form-control" name="passwordConfirm" placeholder="Confirm Password" required="required" 
             value={this.state.passwordConf}
             onChange={this.handleChange}/>
-          </div> */}
-          <div class="form-group">
-            <label class="checkbox-inline"><input type="checkbox" required="required"/> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
           </div>
           <div class="form-group">
-            {/* <button type="submit" class="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Sign Up</button> */}
-            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+            <label class="checkbox-inline">
+              <input type="checkbox" required="required"/> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Sign Up</button>
           </div>
         </form>
         <div>Already have an account? <Link to='/login'>Log in here</Link>

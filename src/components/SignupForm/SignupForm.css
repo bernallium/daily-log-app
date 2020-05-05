@@ -15,6 +15,8 @@
 /* Color of input field when typing */
 .signup-form .form-control:focus {
 	background: #e4e4e4;
+	border-color: #688CFF;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(104, 139, 255, 0.6);
 }
 
 .signup-form .form-control, 
@@ -34,7 +36,7 @@
 .signup-form h2 {
 	color: #333;
 	color: #2F4F4F;
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: 700;
 	margin-bottom: 18px;
 }
@@ -61,11 +63,16 @@
 	min-width: 140px;
 }
 		
-.signup-form .btn:hover, .signup-form .btn:focus{
+.signup-form .btn:hover, .signup-form .btn:focus {
 	/* background: #2389cd;
 	background: rgb(202, 89, 81); */
 	background: rgb(92, 123, 224);
 	outline: none;
+}
+
+.signup-form .btn:focus {
+	border-color: #688CFF;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(104, 139, 255, 0.6);
 }
 
 .signup-form div {
