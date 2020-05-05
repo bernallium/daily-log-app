@@ -7,6 +7,11 @@ import userService from '../../services/userService';
 
 function App() {
   const [user, setUser] = useState(userService.getUser());
+
+  const handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
+
   return (  
     <div className="App">
       <header className="App-header">
@@ -25,7 +30,14 @@ function App() {
           <h1>Home</h1>
         } />
         <Route path='/login' component={LoginPage}/>
-        <Route path='/signup' component={SignupPage}/>
+        {/* <Route path='/signup' component={SignupPage}/> */}
+        <Route exact path='/signup' render={({ history }) => 
+          <SignupPage
+            history={history}
+            // handleSignupOrLogin={this.handleSignupOrLogin} // Don't need 'this' when using function components
+            handleSignupOrLogin={handleSignupOrLogin}
+          />
+        }/>
       </Switch>
     </div>
   );

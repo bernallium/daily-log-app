@@ -7,33 +7,19 @@ import './SignupForm.css'
 class SignupForm extends Component {
 
   state = {
-    firstName: '',
-    lastName: '',
+    name: '',
     email: '',
     password: '',
-    // passwordConfirm: ''
+    passwordConf: ''
   };
 
   handleChange = (e) => {
-    // console.log(`e.target.name = ${e.target.name}`)
-    // console.log(`e.target.value = ${e.target.value}`);
-    // this.props.updateMessage('');
+    this.props.updateMessage('');
     this.setState({
-      [e.target.name]: e.target.value // Using ES2015 Computed Property Names
+      // Using ES2015 Computed Property Names
+      [e.target.name]: e.target.value
     });
   }
-
-  handleChange3 = e => {
-    e.persist();
-    let formInvalid = !this.formRef.current.checkValidity(); // <--
-    this.setState(state => ({
-      newSkill: {
-        ...state.newSkill,
-        [e.target.name]: e.target.value
-      },
-      formInvalid: formInvalid // Check validity of the entire form (need to use a form ref since it's not available within the event target in the handleChange method)
-    }));
-  };
 
   handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +27,7 @@ class SignupForm extends Component {
       await userService.signup(this.state);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
-      // Successfully signed up - show 
+      // Successfully signed up - show GamePage
       this.props.history.push('/');
     } catch (err) {
       // Invalid user data (probably duplicate email)
@@ -98,37 +84,27 @@ class SignupForm extends Component {
   render() { 
     return (
       <div className="signup-form"> 
-        <h2>Sign Up</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form action="/examples/actions/confirmation.php" method="post">
+          <h2>Sign Up</h2>
           <div class="form-group container">
             <div class="row">
               <div>
-                <input type="text" class="form-control" name="firstName" placeholder="First Name" required="required" 
-                value={this.state.firstname}
-                onChange={this.handleChange}/>
+                <input type="text" class="form-control" name="firstname" placeholder="First Name" required="required" value={this.state.name}onChange={this.handleChange}/>
               </div>
               <div>
-                <input type="text" class="form-control" name="lastName" placeholder="Last Name" required="required" 
-                value={this.state.lastname}
-                onChange={this.handleChange}/>
+                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required="required" value={this.state.name}onChange={this.handleChange}/>
               </div>
             </div>        	
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Email" required="required" 
-            value={this.state.email}
-            onChange={this.handleChange}/>
+            <input type="email" class="form-control" name="email" placeholder="Email" required="required" value={this.state.email} onChange={this.handleChange}/>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required" 
-            value={this.state.password}
-            onChange={this.handleChange}/>
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required" value={this.state.password} onChange={this.handleChange}/>
           </div>
-          {/* <div class="form-group">
-            <input type="password" class="form-control" name="passwordConfirm" placeholder="Confirm Password" required="required" 
-            value={this.state.passwordConf}
-            onChange={this.handleChange}/>
-          </div> */}
+          <div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required" value={this.state.passwordConf} onChange={this.handleChange}/>
+          </div>        
           <div class="form-group">
             <label class="checkbox-inline"><input type="checkbox" required="required"/> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
           </div>
