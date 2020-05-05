@@ -29,7 +29,13 @@ function App() {
         <Route exact path='/' render={() =>
           <h1>Home</h1>
         } />
-        <Route path='/login' component={LoginPage}/>
+        {/* <Route path='/login' component={LoginPage}/> */}
+        <Route path='/login' render={(props) =>
+          <LoginPage
+            {...props}
+            handleSignupOrLogin={handleSignupOrLogin}
+          />
+        } />
         {/* <Route path='/signup' component={SignupPage}/> */}
         <Route exact path='/signup' render={({ history }) => 
           <SignupPage

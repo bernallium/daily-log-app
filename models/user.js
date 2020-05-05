@@ -38,4 +38,14 @@ userSchema.pre('save', function(next) {
   });
 });
 
+// Instance method
+userSchema.methods.comparePassword = function(tryPassword, cb) {
+  // bcrypt's compare method verifies that a cleartext password matches a given hash
+  // 'this' represents the document that you called comparePassword on
+  bcrypt.compare(tryPassword, this.password, function(err, isMatch) {
+    if (err) return cb(err);
+    cb(null, isMatch);
+  });
+};
+
 module.exports = mongoose.model('User', userSchema);

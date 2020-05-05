@@ -1,4 +1,4 @@
-import tokenService from './tokenService'; // Token related methods
+import tokenService from './tokenService';
 
 const BASE_URL = '/api/users/';
 
@@ -14,8 +14,9 @@ function signup(user) {
     throw new Error('Email already taken!');
   })
   // Parameter destructuring! The token is saved within an object to the key 'token' key
-  .then(({token}) => 
-    tokenService.setToken(token)); // setToken will be saved to the browser
+  .then(({token}) => {
+    return tokenService.setToken(token);
+  }); // setToken will be saved to the browser
   // The above could have been written as
   //.then((token) => token.token);
 }
