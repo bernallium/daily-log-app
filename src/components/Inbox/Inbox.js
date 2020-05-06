@@ -27,12 +27,12 @@ function Inbox() {
     const fetchData = async () => {
       const result = await taskAPI.index();
       setTasks(result);
-      console.log(tasks);
+      // console.log(tasks);
     };
     fetchData();
   }, []);
 
-  console.log(tasks);
+  // console.log(tasks);
 
   return (
     // <div>
@@ -46,6 +46,8 @@ function Inbox() {
     // </div>
     <div className='inbox'>
       <h2>Inbox <span role="img" aria-label="inbox">📥</span></h2>
+      <div> + Add a tasks</div>
+      <br></br>
       {tasks.map(task =>
         <div className="form-check">
           <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>

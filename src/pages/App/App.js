@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
 import Inbox from '../../components/Inbox/Inbox'
+import Daily from '../../components/Daily/Daily'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -57,7 +58,10 @@ function App() {
           {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
         </Route>
         {user && <Route exact path='/home' render={() =>
-          <Inbox />
+          <>
+            <Inbox />
+            <Daily />
+          </>
         } />}
         {/* <Route path='/login' component={LoginPage}/> */}
         <Route path='/login' render={(props) =>
