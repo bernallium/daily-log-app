@@ -8,12 +8,23 @@ import userService from '../../services/userService';
 function App() {
   const [user, setUser] = useState(userService.getUser());
 
-  // const handleSignupOrLogin = () => {
+  // handleSignupOrLogin = () => {
   //   this.setState({user: userService.getUser()});
   // }
 
   const handleSignupOrLogin = () => {
     setUser(userService.getUser());
+  }
+
+  // handleLogout = () => {
+  //   userService.logout();
+  //   this.setState({ user: null });
+  // }
+
+  const handleLogout = () => {
+    console.log('App: handleLogout')
+    userService.logout();
+    setUser(null);
   }
 
   return (  
@@ -27,6 +38,8 @@ function App() {
           <NavLink to='/login'>Log In</NavLink>
           &nbsp;&nbsp;&nbsp;
           <NavLink to='/signup'>Sign Up</NavLink>
+          &nbsp;&nbsp;&nbsp;
+          <NavLink to='/' onClick={handleLogout}>Log Out</NavLink>
         </nav>
       </header>
       <Switch>

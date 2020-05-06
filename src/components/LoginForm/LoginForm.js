@@ -23,7 +23,6 @@ class LoginForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(this.state);
       await userService.login(this.state);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();

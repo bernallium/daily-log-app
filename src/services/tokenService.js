@@ -34,6 +34,7 @@ function getUserFromToken() {
 }
 
 function removeToken() {
+  console.log('tokenService: removeToken');
   localStorage.removeItem('token');
 }
 
