@@ -1,10 +1,11 @@
 .daily {
-  padding: 80px;
+  padding: 40px;
   color: #2F4F4F;
+  max-width: 800px;
 }
 
 .daily h2 {
 	color: #2F4F4F;
-	font-size: 60px;
+	font-size: 50px;
 	font-weight: 700;
 }

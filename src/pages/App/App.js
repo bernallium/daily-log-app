@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import {Route, NavLink, Switch, Redirect} from 'react-router-dom';
+import HomePage from '../HomePage/HomePage.js'
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
@@ -58,10 +59,7 @@ function App() {
           {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
         </Route>
         {user && <Route exact path='/home' render={() =>
-          <>
-            <Inbox />
-            <Daily />
-          </>
+          <HomePage />
         } />}
         {/* <Route path='/login' component={LoginPage}/> */}
         <Route path='/login' render={(props) =>

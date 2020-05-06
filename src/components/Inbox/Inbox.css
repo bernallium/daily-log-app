@@ -1,10 +1,13 @@
 .inbox {
-  padding: 80px;
+  padding: 40px;
   color: #2F4F4F;
+  min-width: 300px;
+  border-right: 1px solid rgb(230, 230, 230);
+  height: 100vh;
 }
 
 .inbox h2 {
 	color: #2F4F4F;
-	font-size: 60px;
+	font-size: 50px;
 	font-weight: 700;
 }
