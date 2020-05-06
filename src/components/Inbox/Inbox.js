@@ -27,6 +27,7 @@ function Inbox() {
     const fetchData = async () => {
       const result = await taskAPI.index();
       setTasks(result);
+      console.log(tasks);
     };
     fetchData();
   }, []);

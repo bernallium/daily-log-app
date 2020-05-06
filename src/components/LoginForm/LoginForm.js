@@ -44,18 +44,18 @@ class LoginForm extends Component {
       <div className="login-form"> 
         <h2>Log in <span role='img' aria-label='waving hand'>👋</span></h2>
         <form onSubmit={this.handleSubmit}>
-          <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Email" required="required" 
+          <div className="form-group">
+            <input type="email" className="form-control" name="email" placeholder="Email" required="required" 
             value={this.state.email}
             onChange={this.handleChange}/>
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required" 
+          <div className="form-group">
+            <input type="password" className="form-control" name="password" placeholder="Password" required="required" 
             value={this.state.password}
             onChange={this.handleChange}/>
           </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Log in</button>
+          <div className="form-group">
+            <button type="submit" className="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Log in</button>
           </div>
         </form>
         <div>Don't have an account? <Link to='/signup'>Sign up here</Link>

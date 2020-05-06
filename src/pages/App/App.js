@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import {Route, NavLink, Switch} from 'react-router-dom';
+import {Route, NavLink, Switch, Redirect} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
@@ -53,7 +53,10 @@ function App() {
     <div className="App">
       {getNavbar()}
       <Switch>
-        {user && <Route exact path='/' render={() =>
+        <Route exact path="/">
+          {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
+        </Route>
+        {user && <Route exact path='/home' render={() =>
           <Inbox />
         } />}
         {/* <Route path='/login' component={LoginPage}/> */}
