@@ -45,7 +45,7 @@ class SignupForm extends Component {
   render() { 
     return (
       <div className="signup-form"> 
-        <h2>Sign Up 📝</h2>
+        <h2>Sign Up <span role="img" aria-label="pencil and paper">📝</span></h2>
         <form onSubmit={this.handleSubmit}>
           <div class="form-group container">
             <div class="row">
@@ -62,12 +62,12 @@ class SignupForm extends Component {
             </div>        	
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" name="email" placeholder="Email" required="required" 
+            <input type="email" className="form-control" name="email" placeholder="Email" required="required" 
             value={this.state.email}
             onChange={this.handleChange}/>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required" 
+            <input type="password" className="form-control" name="password" placeholder="Password" required="required" 
             value={this.state.password}
             onChange={this.handleChange}/>
           </div>
@@ -76,11 +76,11 @@ class SignupForm extends Component {
             value={this.state.passwordConf}
             onChange={this.handleChange}/>
           </div>
-          <div class="form-group">
+          {/* <div class="form-group">
             <label class="checkbox-inline">
-              <input type="checkbox" required="required"/> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
+              <input type="checkbox" required="required"/> I accept the <button href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a>
             </label>
-          </div>
+          </div> */}
           <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Sign Up</button>
           </div>

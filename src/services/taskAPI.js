@@ -1,11 +1,15 @@
 const BASE_URL = '/api/tasks';
 
-export function index() {
-  return fetch(BASE_URL)
-  .then(res => res.json());
+// function index() {
+//   return fetch(BASE_URL)
+//   .then(res => res.json());
+// }
+
+async function index() {
+  return await fetch(BASE_URL).then(res => res.json());
 }
 
-export function create(task) {
+function create(task) {
   return fetch(BASE_URL, {
     method: 'POST',
     headers: {'content-type': 'application/json'},
@@ -13,7 +17,7 @@ export function create(task) {
   }).then(res => res.json());
 }
 
-export function update(task) {
+function update(task) {
   return fetch(`${BASE_URL}/${task._id}`, {
     method: 'PUT',
     headers: {'content-type': 'application/json'},
@@ -21,11 +25,18 @@ export function update(task) {
   }).then(res => res.json());
 }
 
-export function deleteOne(task) {
-  return fetch(`${BASE_URL}/${tasl._id}`, {
+function deleteOne(task) {
+  return fetch(`${BASE_URL}/${task._id}`, {
     method: 'DELETE'
   }).then(res => res.json());
 }
+
+export default {
+  index,
+  create,
+  update,
+  delete: deleteOne
+};
 
 // [x] router.get('/tasks', taskCtrlr.index); // Get all tasks
 // [x] router.post('/tasks', taskCtrlr.create); // Create a task

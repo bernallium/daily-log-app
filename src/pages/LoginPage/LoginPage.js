@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import './LoginPage.css';
-import userService from '../../services/userService';
+// import userService from '../../services/userService';
 
 const LoginPage = (props) => {
   // const handleChange = (e) => {

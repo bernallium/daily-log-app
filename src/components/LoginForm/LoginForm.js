@@ -42,7 +42,7 @@ class LoginForm extends Component {
   render() { 
     return (
       <div className="login-form"> 
-        <h2>Log in 👋</h2>
+        <h2>Log in <span role='img' aria-label='waving hand'>👋</span></h2>
         <form onSubmit={this.handleSubmit}>
           <div class="form-group">
             <input type="email" class="form-control" name="email" placeholder="Email" required="required" 

@@ -4,6 +4,7 @@ import {Route, NavLink, Switch} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
+import Inbox from '../../components/Inbox/Inbox'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -52,9 +53,9 @@ function App() {
     <div className="App">
       {getNavbar()}
       <Switch>
-        <Route exact path='/' render={() =>
-          <h1>Home</h1>
-        } />
+        {user && <Route exact path='/' render={() =>
+          <Inbox />
+        } />}
         {/* <Route path='/login' component={LoginPage}/> */}
         <Route path='/login' render={(props) =>
           <LoginPage
