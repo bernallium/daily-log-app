@@ -30,7 +30,7 @@ function App() {
   return (  
     <div className="App">
       <header className="App-header">
-        <nav>
+        <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end'>
           <NavLink exact to='/'>Home</NavLink>
           &nbsp;&nbsp;&nbsp;
           <NavLink to='/add'>Add</NavLink>
