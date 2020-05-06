@@ -6,7 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
 
 function App() {
-  const [user, setUser] = useState(userService.getUser());
+  const [user, setUser] = useState(null);
 
   // handleSignupOrLogin = () => {
   //   this.setState({user: userService.getUser()});
@@ -27,21 +27,30 @@ function App() {
     setUser(null);
   }
 
-  return (  
-    <div className="App">
-      <header className="App-header">
-        <nav className='navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-end'>
+  const getNavbar = () => {
+    if (user) {
+      return (
+        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-end'>
           <NavLink exact to='/'>Home</NavLink>
           &nbsp;&nbsp;&nbsp;
-          <NavLink to='/add'>Add</NavLink>
-          &nbsp;&nbsp;&nbsp;
+          <NavLink to='/login' onClick={handleLogout}>Log Out</NavLink>
+        </nav>
+      )
+    } else {
+      return (
+        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-end'>
           <NavLink to='/login'>Log In</NavLink>
           &nbsp;&nbsp;&nbsp;
           <NavLink to='/signup'>Sign Up</NavLink>
-          &nbsp;&nbsp;&nbsp;
-          <NavLink to='/' onClick={handleLogout}>Log Out</NavLink>
         </nav>
-      </header>
+      )
+    }
+
+  }
+
+  return (  
+    <div className="App">
+      {getNavbar()}
       <Switch>
         <Route exact path='/' render={() =>
           <h1>Home</h1>
