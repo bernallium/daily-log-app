@@ -2,6 +2,7 @@
   padding: 40px;
   color: #2F4F4F;
   max-width: 800px;
+  min-width: 550px;
 }
 
 .daily h2 {

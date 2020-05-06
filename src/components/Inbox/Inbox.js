@@ -46,7 +46,7 @@ function Inbox() {
     // </div>
     <div className='inbox'>
       <h2>Inbox <span role="img" aria-label="inbox">📥</span></h2>
-      <div> + Add a tasks</div>
+      <div> + Add a task</div>
       <br></br>
       {tasks.map(task =>
         <div className="form-check">
