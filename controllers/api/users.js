@@ -14,6 +14,7 @@ module.exports = {
 
 async function index(req, res) {
   const users = await User.find({});
+  console.log(users);
   res.status(200).json(users);
 }
 
