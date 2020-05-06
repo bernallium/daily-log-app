@@ -8,8 +8,12 @@ import userService from '../../services/userService';
 function App() {
   const [user, setUser] = useState(userService.getUser());
 
+  // const handleSignupOrLogin = () => {
+  //   this.setState({user: userService.getUser()});
+  // }
+
   const handleSignupOrLogin = () => {
-    this.setState({user: userService.getUser()});
+    setUser(userService.getUser());
   }
 
   return (  

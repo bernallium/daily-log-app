@@ -1,10 +1,10 @@
-.signup-form {
+.login-form {
 	/* width: 390px; */
-	margin: 100px auto;
+	margin: 200px auto;
 }
 
 /* Input fields */
-.signup-form .form-control {
+.login-form .form-control {
 	height: 40px;
 	background: #f2f2f2;
 	/* box-shadow: none; */
@@ -13,18 +13,18 @@
 }
 
 /* Color of input field when typing */
-.signup-form .form-control:focus {
+.login-form .form-control:focus {
 	background: #e4e4e4;
 	border-color: #688CFF;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(104, 139, 255, 0.6);
 }
 
-.signup-form .form-control, 
-.signup-form .btn {        
+.login-form .form-control, 
+.login-form .btn {        
 	border-radius: 4px;
 }
 
-/* .signup-form form {
+/* .login-form form {
 	color: #999;
 	border-radius: 3px;
 	margin-bottom: 15px;
@@ -33,7 +33,7 @@
 	padding: 30px;
 } */
 
-.signup-form h2 {
+.login-form h2 {
 	color: #333;
 	color: #2F4F4F;
 	font-size: 40px;
@@ -41,19 +41,19 @@
 	margin-bottom: 18px;
 }
 
-.signup-form .form-group{
+.login-form .form-group{
 	margin-bottom: 16px;
 }
 
-.signup-form .row div:first-child{
+.login-form .row div:first-child{
 	padding-right: 8px;
 }
 
-.signup-form .row div:last-child{
+.login-form .row div:last-child{
 	padding-left: 8px;
 }
 
-.signup-form .btn{        
+.login-form .btn{        
 	font-size: 16px;
 	font-weight: 600;
 	/* background: #3598dc; */
@@ -63,24 +63,24 @@
 	min-width: 140px;
 }
 		
-.signup-form .btn:hover, .signup-form .btn:focus {
+.login-form .btn:hover, .login-form .btn:focus {
 	/* background: #2389cd;
 	background: rgb(202, 89, 81); */
 	background: rgb(92, 123, 224);
 	outline: none;
 }
 
-.signup-form .btn:focus {
+.login-form .btn:focus {
 	border-color: #688CFF;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(104, 139, 255, 0.6);
 }
 
-.signup-form div {
+.login-form div {
 	color: #2F4F4F;
 	font-size: 13px;
 }
 
-.signup-form input[type="checkbox"] {
+.login-form input[type="checkbox"] {
 	margin-left: 8px;
 	margin-right: 8px;
 }

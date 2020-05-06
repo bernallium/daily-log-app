@@ -4,12 +4,12 @@ import './LoginPage.css';
 import userService from '../../services/userService';
 
 const LoginPage = (props) => {
-  const handleChange = (e) => {
-    this.setState({
-      // Using ES2015 Computed Property Names
-      [e.target.name]: e.target.value
-    });
-  }
+  // const handleChange = (e) => {
+  //   this.setState({
+  //     // Using ES2015 Computed Property Names
+  //     [e.target.name]: e.target.value
+  //   });
+  // }
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();

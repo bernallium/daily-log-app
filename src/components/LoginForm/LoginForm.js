@@ -23,12 +23,14 @@ class LoginForm extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log(this.state);
       await userService.login(this.state);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
       // Successfully signed up - show HomePage
       this.props.history.push('/');
     } catch (err) {
+      console.log(err);
       // Use a modal or toast in your apps instead of alert
       alert('Invalid Credentials!');
     }
@@ -40,8 +42,8 @@ class LoginForm extends Component {
 
   render() { 
     return (
-      <div className="signup-form"> 
-        <h2>Log in</h2>
+      <div className="login-form"> 
+        <h2>Log in 👋</h2>
         <form onSubmit={this.handleSubmit}>
           <div class="form-group">
             <input type="email" class="form-control" name="email" placeholder="Email" required="required" 
