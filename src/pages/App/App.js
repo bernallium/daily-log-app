@@ -30,13 +30,33 @@ function App() {
     setUser(null);
   }
 
+  const QUOTES = [
+    'Your brain is for having ideas, not for storing them.',
+    'Until you set the priority, your priority is to set the priority.',
+    'If you don’t prioritize your life, someone else will.',
+    'The key is not spending time, but investing in it.',
+    'Let the future you make decisions for you.',
+    'How we spend our days, is of course, how we spend our lives.',
+    'Big rocks first!',
+    'The key is not to prioritize your schedule but to schedule you priorities.'
+  ]
+  
+  const getRandomQuote = () => {
+    return QUOTES[Math.floor(Math.random() * QUOTES.length)];
+  }
+
   const getNavbar = () => {
     if (user) {
       return (
-        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-end'>
-          <NavLink exact to='/'>Home</NavLink>
-          &nbsp;&nbsp;&nbsp;
-          <NavLink to='/login' onClick={handleLogout}>Log Out</NavLink>
+        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-between'>
+          <span class="navbar-text">
+            {getRandomQuote()}
+          </span>
+          <div>
+            <NavLink exact to='/'>Home</NavLink>
+            &nbsp;&nbsp;&nbsp;
+            <NavLink to='/login' onClick={handleLogout}>Log Out</NavLink>
+          </div>
         </nav>
       )
     } else {
@@ -48,7 +68,6 @@ function App() {
         </nav>
       )
     }
-
   }
 
   return (  

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './Inbox.css';
 import taskAPI from '../../services/taskAPI'
+import Task from '../Task/Task'
 
 function Inbox() {
   let [tasks, setTasks] = useState([]);
+  let [tasksLength, setTasksLength] = useState(0);
   let [newTask, updateNewTask] = useState('');
   // const [showButton, setShow] = useState(true); 
+
+  console.log(tasks.length);
+  console.log(tasksLength);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,8 +18,13 @@ function Inbox() {
       setTasks(result);
     };
     fetchData();
-  }, [tasks]);
+  }, []);
 
+  // No array passed in --> Infinite fetch re-render loop (new tasks are also rendered), ie. runs once
+  // ComponentDidMount: [] --> No infinite fetch, but no re-render when a new task is added
+  // [tasks] --> Infinite fetch re-render loop (new tasks are rendered)
+  // Try passing in some sort of counter?
+  
   // const handleChange = e => {
   //   e.persist();
   //   let formInvalid = !this.formRef.current.checkValidity(); // <--
@@ -35,6 +45,7 @@ function Inbox() {
     // Need to prevent the browser from submitting the form when you click the button or hit
     e.preventDefault();
     console.log('addTask');
+    setTasksLength(tasks.length + 1);
     taskAPI.create({task: newTask});
     updateNewTask('');
   };
@@ -51,12 +62,17 @@ function Inbox() {
         />
       </form>
       {tasks.map(task =>
-        <div className="form-check">
-          <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-          <label className="form-check-label" for="defaultCheck1">
-            {task.task}
-          </label>
-        </div>
+        <Task task={task}/>
+        // <div className="form-check">
+        //   <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+        //   <label className="form-check-label" for="defaultCheck1">
+        //     {task.task}
+        //   </label>
+        // </div>
+        // <div class="custom-control custom-checkbox">
+        //   <input type="checkbox" class="custom-control-input" id="customControlValidation1" required/>
+        //   <label class="custom-control-label" for="customControlValidation1">{task.task}</label>
+        // </div>
         )
       }
     </div>

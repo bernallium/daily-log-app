@@ -41,3 +41,10 @@
   margin-top: 16px;
   margin-bottom: -6px;
 }
+
+/* Color of input field when typing */
+.inbox .form-control:focus {
+	/* background: #e4e4e4; */
+	border-color: #688CFF;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(104, 140, 255, 0.6);
+}
