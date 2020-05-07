@@ -15,8 +15,7 @@ function WeeklyTasks() {
   return (
     <div className='weeklyTasks'>
       <h2>Week <span role="img" aria-label="calendar">🗓</span></h2>
-      <div> + Add a task</div>
-      <br></br>
+      <div className='btn btn-primary'>+ Add a task</div>
       {tasks.map(task =>
         <div className="form-check">
           <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
