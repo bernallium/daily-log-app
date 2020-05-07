@@ -3,12 +3,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.2s linear;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.task:hover {
+  background-color: rgb(238, 238, 238);
 }
 
 .task .delete {
   opacity: 0;
   transition: all 0.2s linear;
   /* font-size: 116px; */
+  margin-left: 5px;
 }
 
 .task:hover .delete {
@@ -20,4 +28,14 @@
   opacity: 1;
   transition: all 0.2s linear;
   color: rgb(207, 80, 76);
+}
+
+.task .form-check-label {
+  /* overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 25ch;
 }
