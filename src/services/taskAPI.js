@@ -34,8 +34,15 @@ function update(task) {
   }).then(res => res.json());
 }
 
-function deleteOne(task) {
-  return fetch(`${BASE_URL}/${task._id}`, {
+// function deleteOne(task) {
+//   return fetch(`${BASE_URL}/${task._id}`, {
+//     method: 'DELETE'
+//   }).then(res => res.json());
+// }
+
+const deleteOne = async (task) => {
+  console.log('taskAPI: delete');
+  return await fetch(`${BASE_URL}/${task._id}`, {
     method: 'DELETE'
   }).then(res => res.json());
 }

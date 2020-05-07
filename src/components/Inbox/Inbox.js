@@ -9,16 +9,13 @@ function Inbox() {
   let [newTask, updateNewTask] = useState('');
   // const [showButton, setShow] = useState(true); 
 
-  console.log(tasks.length);
-  console.log(tasksLength);
-
   useEffect(() => {
     const fetchData = async () => {
       const result = await taskAPI.index();
       setTasks(result);
     };
     fetchData();
-  }, []);
+  }, [tasksLength]);
 
   // No array passed in --> Infinite fetch re-render loop (new tasks are also rendered), ie. runs once
   // ComponentDidMount: [] --> No infinite fetch, but no re-render when a new task is added
@@ -50,6 +47,11 @@ function Inbox() {
     updateNewTask('');
   };
 
+  const deleteTask = (taskToDelete) => {
+    setTasksLength(tasks.length - 1);
+    taskAPI.delete(taskToDelete);
+  }
+
   return (
     <div className='inbox'>
       <h2>Inbox <span role="img" aria-label="inbox">📥</span></h2>
@@ -62,7 +64,7 @@ function Inbox() {
         />
       </form>
       {tasks.map(task =>
-        <Task task={task}/>
+        <Task task={task} deleteTask={deleteTask}/>
         // <div className="form-check">
         //   <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
         //   <label className="form-check-label" for="defaultCheck1">
