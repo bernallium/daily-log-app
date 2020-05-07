@@ -36,11 +36,3 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
-input[type=checkbox] + label {
-  
-} 
-input[type=checkbox]:checked + label {
-  color: rgb(180, 180, 180);
-  text-decoration: line-through;
-} 

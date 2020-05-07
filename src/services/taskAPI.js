@@ -18,6 +18,7 @@ async function index() {
 // }
 
 const create = async (task) => {
+  console.log('taskAPI: create')
   return await fetch(BASE_URL, {
     method: 'POST',
     headers: {'content-type': 'application/json'},

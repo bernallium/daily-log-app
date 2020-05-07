@@ -13,7 +13,7 @@ function Inbox() {
       setTasks(result);
     };
     fetchData();
-  }, []);
+  }, [tasks]);
 
   // const handleChange = e => {
   //   e.persist();
@@ -31,10 +31,11 @@ function Inbox() {
     updateNewTask(e.target.value);
   }
 
-  const addTask = e => {
+  const addTask = (e) => {
     // Need to prevent the browser from submitting the form when you click the button or hit
-    console.log('addTask');
     e.preventDefault();
+    console.log('addTask');
+    taskAPI.create({task: newTask});
     updateNewTask('');
   };
 
