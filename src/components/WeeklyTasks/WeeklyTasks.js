@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './WeeklyTasks.css';
+import './WeeklyTasks.css'
 import taskAPI from '../../services/taskAPI'
+import Task from '../Task/Task'
 
 function WeeklyTasks() {
   let [tasks, setTasks] = useState([]);
+  let [tasksLength, setTasksLength] = useState(0);
   let [newTask, updateNewTask] = useState('');
   
   useEffect(() => {
@@ -26,10 +28,14 @@ function WeeklyTasks() {
     updateNewTask('');
   };
 
+    const deleteTask = (taskToDelete) => {
+    setTasksLength(tasks.length - 1);
+    taskAPI.delete(taskToDelete);
+  }
+
   return (
-    <div className='weeklyTasks'>
-      <h2>Week <span role="img" aria-label="calendar">🗓</span></h2>
-      {/* <div className='btn btn-primary'>+ Add a task</div> */}
+    <div className='weekly-tasks'>
+    <h2>Week <span role="img" aria-label="calendar">🗓</span></h2>
       <form className="form-group" onSubmit={addTask}>
         <input type="text" className="form-control" name="task" placeholder="+ Add a task"
           value={newTask}
@@ -38,12 +44,7 @@ function WeeklyTasks() {
         />
       </form>
       {tasks.map(task =>
-        <div className="form-check">
-          <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-          <label className="form-check-label" for="defaultCheck1">
-            {task.task}
-          </label>
-        </div>
+        <Task task={task} deleteTask={deleteTask}/>
         )
       }
     </div>

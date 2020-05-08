@@ -76,7 +76,8 @@ const Day = ({dayName, YYYYMMDD}) => {
           }
         </ul>
         <form className="form-group" onSubmit={addNote}>
-          <input type="text" className="form-control" name="task" placeholder="+ Add a content"
+          <div className='plus-symbol'>+</div>
+          <input type="text" className="form-control" name="task" placeholder="Add a note"
             value={newNote}
             onChange={handleChange}
             required

@@ -3,7 +3,8 @@
   min-width: 500px;
   padding: 20px 20px 45px 40px;
   display: flex;
-  border-bottom: 1px solid rgba(230, 230, 230, 0.884);
+  border-bottom: 1px solid whitesmoke;
+  align-items: stretch;
 }
 
 .day h2 {
@@ -27,8 +28,7 @@
   align-items: center;
   margin: 0;
   align-self: start;
-  width: 100px;
-  margin-right: 20px;
+  min-width: 110px;
 }  
 
 .day .day-month-container {
@@ -59,6 +59,13 @@
 
 .day .form-group {
   margin: 0;
+  display: flex;
+}
+
+.day .plus-symbol {
+  margin-left: 5px;
+  margin-right: 6px;
+  margin-top: 7px;
 }
 
 .day .form-control {
@@ -66,6 +73,7 @@
   border: none;
   margin: 0;
   width: 500px;
+  transition: all 0.2s linear;
 }
 
 .day .form-control:focus {
@@ -74,6 +82,16 @@
 }
 
 .day:hover .form-control {
+  opacity: 0.8;
+  transition: all 0.2s linear;
+}
+
+.day .plus-symbol {
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.day:hover .plus-symbol {
   opacity: 0.8;
   transition: all 0.2s linear;
 }
@@ -138,13 +156,14 @@
 
 .note:hover {
   background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s linear;
 }
 
 .note .delete {
   opacity: 0;
   transition: all 0.2s linear;
   /* font-size: 116px; */
-  margin-left: 5px;
+  margin-left: 20px;
 }
 
 .note:hover .delete {
