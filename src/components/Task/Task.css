@@ -5,7 +5,8 @@
   justify-content: space-between;
   transition: all 0.2s linear;
   border-radius: 4px;
-  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .task:hover {
@@ -38,4 +39,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 25ch;
+}
+
+.task .form-check {
+  align-self: center;
+  justify-content: center;
+  padding-top: 4px;
 }

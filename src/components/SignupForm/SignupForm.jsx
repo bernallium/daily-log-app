@@ -82,7 +82,7 @@ class SignupForm extends Component {
             </label>
           </div> */}
           <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Sign Up</button>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Sign Up<i class="fas fa-arrow-right"/></button>
           </div>
         </form>
         <div>Already have an account? <Link to='/login'>Log in here</Link>

@@ -53,7 +53,7 @@ function App() {
             {getRandomQuote()}
           </span>
           <div>
-            <NavLink exact to='/'>Home</NavLink>
+            <NavLink exact to='/'>DailyLog</NavLink>
             &nbsp;&nbsp;&nbsp;
             <NavLink to='/login' onClick={handleLogout}>Log Out</NavLink>
           </div>

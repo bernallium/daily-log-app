@@ -4,21 +4,24 @@ import './Daily.css';
 const Daily = () => {
 
   const DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const today = new Date();
   // const dd = String(today.getDate()).padStart(2, '0');
   // const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   const dd = String(today.getDate());
   const mm = String(today.getMonth() + 1); //January is 0!
-  var dayOfWeek = DAYS_OF_WEEK[today.getDay()];
+  let dayOfWeek = DAYS_OF_WEEK[today.getDay()];
+  let month = MONTHS[today.getMonth()];
+  
 
   return (
     <div className='daily'>
       <div>
         <div className='daily-header'>
-          <h2 className='dd'>17</h2>
+          <h2 className='dd'>{dd}</h2>
           <div className='day-month-container'>
-            <h3 className='day'>Thurs</h3>
-            <h3 className='month'>May</h3>
+            <h3 className='day'>{dayOfWeek}</h3>
+            <h3 className='month'>{month}</h3>
           </div>
         </div>
         <hr/>

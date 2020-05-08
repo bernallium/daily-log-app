@@ -55,7 +55,7 @@ class LoginForm extends Component {
             onChange={this.handleChange}/>
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Log in</button>
+            <button type="submit" className="btn btn-primary btn-block btn-lg" disabled={this.isFormInvalid()}>Log in<i class="fas fa-arrow-right"/></button>
           </div>
         </form>
         <div>Don't have an account? <Link to='/signup'>Sign up here</Link>
