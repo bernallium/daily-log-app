@@ -24,7 +24,7 @@ function show(req, res) {
 
 // Create a note
 function create(req, res) {
-  Task.create(req.body).then(createdNote => {
+  Note.create(req.body).then(createdNote => {
     res.status(201).json(createdNote);
   }).catch(err => {
     res.status(400).json(err);
@@ -42,7 +42,7 @@ function update(req, res) {
 
 // Delete a note
 function deleteOne(req, res) {
-  Task.findByIdAndDelete(req.params.id).then(deletedNote => {
+  Note.findByIdAndDelete(req.params.id).then(deletedNote => {
     res.status(200).json(deletedNote);
   }).catch(err => {
     res.status(400).json(err);
