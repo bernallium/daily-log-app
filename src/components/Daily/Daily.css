@@ -8,5 +8,41 @@
 .daily h2 {
 	color: #2F4F4F;
 	font-size: 40px;
-	font-weight: 700;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.daily .dd {
+	color: #2F4F4F;
+	font-size: 40px;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.daily .daily-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}  
+
+.daily .day-month-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.daily .day { 
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.daily .month { 
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(150, 150, 150);
+  margin: 0;
 }
