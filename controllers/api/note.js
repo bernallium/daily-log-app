@@ -6,6 +6,7 @@ module.exports = {
   show,
   update,
   delete: deleteOne,
+  showDay
 };
 
 async function index(req, res) {
@@ -16,6 +17,15 @@ async function index(req, res) {
 // Get a specific note
 function show(req, res) {
   Note.findById(req.params.id).then(note => {
+    res.status(200).json(note);
+  }).catch(err => {
+    res.status(400).json(err);
+  });
+}
+
+// Get this day's notes
+function showDay(req, res) {
+  Note.find({date: req.params.id}).then(note => {
     res.status(200).json(note);
   }).catch(err => {
     res.status(400).json(err);

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Day.css'
+import noteAPI from '../../services/noteAPI.js'
 
 const Day = ({dayName, YYYYMMDD}) => {
 
@@ -22,6 +23,39 @@ const Day = ({dayName, YYYYMMDD}) => {
     return MONTHS[parseInt(monthNum) - 1];
   }
 
+  let [notes, setNotes] = useState([]);
+  let [notesLength, setNotesLength] = useState(0);
+  let [newNote, updateNewNote] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await noteAPI.showDay(YYYYMMDD);
+      setNotes(result);
+    };
+    fetchData();
+  }, [notesLength]);
+
+  const handleChange = (e) => {
+    updateNewNote(e.target.value);
+  }
+
+  const addNote = (e) => {
+    // Need to prevent the browser from submitting the form when you click the button or hit
+    e.preventDefault();
+    console.log('addNote');
+    setNotesLength(notes.length + 1);
+    noteAPI.create({
+      note: newNote,
+      date: YYYYMMDD
+    });
+    updateNewNote('');
+  };
+
+  const deleteNote = (noteToDelete) => {
+    setNotesLength(notes.length - 1);
+    noteAPI.delete(noteToDelete);
+  }
+
   return (
     <div className='day'>
       <div className='day-header'>
@@ -31,7 +65,14 @@ const Day = ({dayName, YYYYMMDD}) => {
           <h3 className='month'>{getMonth()}</h3>
         </div>
       </div>
-      <div contentEditable='true'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Sagittis nisl rhoncus mattis rhoncus urna neque. Nisl purus in mollis nunc. Quam pellentesque nec nam aliquam sem et tortor consequat. Hendrerit gravida rutrum quisque non tellus orci. Platea dictumst quisque sagittis purus sit amet volutpat consequat.</div>
+      {/* <div contentEditable='true'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Sagittis nisl rhoncus mattis rhoncus urna neque. Nisl purus in mollis nunc. Quam pellentesque nec nam aliquam sem et tortor consequat. Hendrerit gravida rutrum quisque non tellus orci. Platea dictumst quisque sagittis purus sit amet volutpat consequat.</div> */}
+      <form className="form-group onSubmit={addNote}">
+        <input type="text" className="form-control" name="task" placeholder="+ Add a content"
+          value={newNote}
+          onChange={handleChange}
+          required
+        />
+      </form>
       <div className='add-content'>+ Add content</div>
     </div>
   );

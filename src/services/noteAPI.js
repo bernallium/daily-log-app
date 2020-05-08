@@ -27,9 +27,16 @@ const deleteOne = async (note) => {
   }).then(res => res.json());
 }
 
+const showDay = async (note) => {
+  console.log('noteAPI: showDay');
+  return await fetch(`${BASE_URL}/${note.date}`)
+.then(res => res.json());
+}
+
 export default {
   index,
   create,
   update,
-  delete: deleteOne
+  delete: deleteOne,
+  showDay
 };
