@@ -3,7 +3,7 @@ import './Daily.css';
 import Day from '../Day/Day';
 
 const Daily = () => {
-  const DAYS_OF_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const DAYS_OF_WEEK = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
   const currentWeek = getCurrentWeek();
   
   // Returns the string representation of a Date object as 'YYYYMMDD'
