@@ -8,6 +8,7 @@ require('./config/database');
 
 const usersRouter = require('./routes/api/users');
 const taskRouter = require('./routes/api/tasks');
+const noteRouter = require('./routes/api/notes')
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 // app.use('/api/scores', require('./routes/api/scores'));
 app.use('/api/users', usersRouter);
 app.use('/api/tasks', taskRouter);
+app.use('/api/notes', noteRouter);
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work 

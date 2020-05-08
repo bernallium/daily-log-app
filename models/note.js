@@ -12,4 +12,4 @@ const noteSchema = new Schema({
     }
 );
 
-module.exports = mongoose.model('Task', taskSchema);
+module.exports = mongoose.model('Note', noteSchema);
