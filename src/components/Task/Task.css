@@ -10,7 +10,7 @@
 }
 
 .task:hover {
-  background-color: rgb(238, 238, 238);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .task .delete {

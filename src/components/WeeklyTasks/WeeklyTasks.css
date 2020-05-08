@@ -3,8 +3,9 @@
   color: #2F4F4F;
   min-width: 340px;
   border-right: 1px solid rgb(230, 230, 230);
-  height: 100vh;
   background-color: whitesmoke;
+  overflow-y: scroll; 
+  margin-top: 53px;
 }
 
 .weeklyTasks h2 {

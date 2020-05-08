@@ -48,7 +48,7 @@ function App() {
   const getNavbar = () => {
     if (user) {
       return (
-        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-between'>
+        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-between fixed-top'>
           <span class="navbar-text">
             {getRandomQuote()}
           </span>
@@ -61,7 +61,7 @@ function App() {
       )
     } else {
       return (
-        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-end'>
+        <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-end fixed-top'>
           <NavLink to='/login'>Log In</NavLink>
           &nbsp;&nbsp;&nbsp;
           <NavLink to='/signup'>Sign Up</NavLink>
