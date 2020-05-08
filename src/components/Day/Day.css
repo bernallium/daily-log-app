@@ -1,18 +1,18 @@
-/* .daily {
+.day {
   padding: 40px;
   color: #2F4F4F;
   max-width: 800px;
   min-width: 500px;
 }
 
-.daily h2 {
+.day h2 {
 	color: #2F4F4F;
 	font-size: 40px;
   font-weight: 700;
   letter-spacing: -2px;
 }
 
-.daily .dd {
+.day .dd {
 	color: #2F4F4F;
 	font-size: 40px;
   font-weight: 700;
@@ -20,29 +20,29 @@
   margin-bottom: 0;
 }
 
-.daily .daily-header {
+.day .day-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0;
 }  
 
-.daily .day-month-container {
+.day .day-month-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.daily .day-of-week { 
+.day .day-of-week { 
   font-size: 18px;
   font-weight: 700;
   margin: 0;
 }
 
-.daily .month { 
+.day .month { 
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
   color: rgb(150, 150, 150);
   margin: 0;
-} */
+}
