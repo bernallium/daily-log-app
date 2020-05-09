@@ -1,11 +1,10 @@
-# **DailyLog**
+# DailyLog
 
 <img src="public/screenshots/home.png" width="1010x">
 <p float="left">
   <img src="public/screenshots/signup.png" width="500x" />
   <img src="public/screenshots/login.png" width="500x" />
 </p>
-
 
 ### [Create a free account here](https://dailylog-mern.herokuapp.com/login)
 

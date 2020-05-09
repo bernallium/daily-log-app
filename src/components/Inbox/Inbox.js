@@ -42,13 +42,13 @@ function Inbox() {
     // Need to prevent the browser from submitting the form when you click the button or hit
     e.preventDefault();
     console.log('addTask');
-    setTasksLength(tasks.length + 1);
+    setTasksLength(tasksLength + 1);
     taskAPI.create({task: newTask});
     updateNewTask('');
   };
 
   const deleteTask = (taskToDelete) => {
-    setTasksLength(tasks.length - 1);
+    setTasksLength(tasksLength - 1);
     taskAPI.delete(taskToDelete);
   }
 
