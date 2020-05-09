@@ -1,10 +1,13 @@
 # **DailyLog**
 
 <img src="public/screenshots/home.png" width="1010x">
-<img src="public/screenshots/signup.png" width="500x" /><img src="public/screenshots/login.png" width="500x" />
+<p float="left">
+  <img src="public/screenshots/signup.png" width="500x" />
+  <img src="public/screenshots/login.png" width="500x" />
+</p>
 
 
-### [Create a free account **here**](https://dailylog-mern.herokuapp.com/login)
+### [Create a free account here](https://dailylog-mern.herokuapp.com/login)
 
 **DailyLog** is a note taking and task manager application combined. Use it to *plan for the future and record the past so that every day you can be more present*. Add floating tasks to your Inbox  📥 and when you want to accomplish them within the current week, migrate them to the weekly task list 📅. The Day view on the right provides a space where you can take any notes for a specific day.
 
