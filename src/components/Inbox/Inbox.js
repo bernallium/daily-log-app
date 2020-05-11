@@ -47,9 +47,9 @@ function Inbox() {
     updateNewTask('');
   };
 
-  const deleteTask = (taskToDelete) => {
+  const deleteTask = async (taskToDelete) => {
+    await taskAPI.delete(taskToDelete);
     setTasksLength(tasksLength - 1);
-    taskAPI.delete(taskToDelete);
   }
 
   return (
