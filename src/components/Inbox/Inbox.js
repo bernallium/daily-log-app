@@ -38,12 +38,12 @@ function Inbox() {
     updateNewTask(e.target.value);
   }
 
-  const addTask = (e) => {
+  const addTask = async (e) => {
     // Need to prevent the browser from submitting the form when you click the button or hit
     e.preventDefault();
     console.log('addTask');
+    await taskAPI.create({task: newTask});
     setTasksLength(tasksLength + 1);
-    taskAPI.create({task: newTask});
     updateNewTask('');
   };
 
