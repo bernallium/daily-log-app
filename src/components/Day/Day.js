@@ -43,17 +43,17 @@ const Day = ({dayName, YYYYMMDD}) => {
     // Need to prevent the browser from submitting the form when you click the button or hit
     e.preventDefault();
     console.log('addNote');
-    noteAPI.create({
+    await noteAPI.create({
       note: newNote,
       date: YYYYMMDD
     });
-    await setNotesLength(notes.length + 1);
+    setNotesLength(notesLength + 1);
     updateNewNote('');
   };
 
   const deleteNote = async (noteToDelete) => {
     await noteAPI.delete(noteToDelete);
-    setNotesLength(notes.length - 1);
+    setNotesLength(notesLength - 1);
   }
 
   return (
