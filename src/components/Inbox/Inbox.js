@@ -53,7 +53,7 @@ function Inbox() {
   }
 
   const migrateTask = async (taskToMigrate) => {
-    taskToMigrate.dateMigrated('TODAY');
+    taskToMigrate.dateMigrated = 'TODAY';
     await taskAPI.update(taskToMigrate);
   }
 
@@ -69,7 +69,11 @@ function Inbox() {
         />
       </form>
       {tasks.map(task =>
-        <Task task={task} deleteTask={deleteTask}/>
+        <Task 
+          task={task} 
+          deleteTask={deleteTask}
+          migrateTask={migrateTask}
+        />
         // <div className="form-check">
         //   <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
         //   <label className="form-check-label" for="defaultCheck1">
