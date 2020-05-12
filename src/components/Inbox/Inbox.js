@@ -52,6 +52,11 @@ function Inbox() {
     setTasksLength(tasksLength - 1);
   }
 
+  const migrateTask = async (taskToMigrate) => {
+    taskToMigrate.dateMigrated('TODAY');
+    await taskAPI.update(taskToMigrate);
+  }
+
   return (
     <div className='inbox'>
       <h2>Inbox <span role="img" aria-label="inbox">📥</span></h2>

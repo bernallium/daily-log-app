@@ -10,6 +10,7 @@ const HomePage = () => {
       <Inbox />
       <WeeklyTasks />
       <Daily />
+
     </div>
   ); 
 }
