@@ -8,14 +8,26 @@ import userService from '../../services/userService';
 import Inbox from '../../components/Inbox/Inbox'
 import Daily from '../../components/Daily/Daily'
 
+const QUOTES = [
+  'Your brain is for having ideas, not for storing them.',
+  'Until you set the priority, your priority is to set the priority.',
+  'If you don’t prioritize your life, someone else will.',
+  'The key is not spending time, but investing in it.',
+  'Let the future you make decisions for you.',
+  'How we spend our days, is of course, how we spend our lives.',
+  'Big rocks first!',
+  'The key is not to prioritize your schedule but to schedule you priorities.'
+]
+
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(userService.getUser()); // // Initialize user if there's a token, otherwise null
 
   // handleSignupOrLogin = () => {
   //   this.setState({user: userService.getUser()});
   // }
 
   const handleSignupOrLogin = () => {
+    console.log('App: handleSignupOrLogin')
     setUser(userService.getUser());
   }
 
@@ -29,17 +41,6 @@ function App() {
     userService.logout();
     setUser(null);
   }
-
-  const QUOTES = [
-    'Your brain is for having ideas, not for storing them.',
-    'Until you set the priority, your priority is to set the priority.',
-    'If you don’t prioritize your life, someone else will.',
-    'The key is not spending time, but investing in it.',
-    'Let the future you make decisions for you.',
-    'How we spend our days, is of course, how we spend our lives.',
-    'Big rocks first!',
-    'The key is not to prioritize your schedule but to schedule you priorities.'
-  ]
   
   const getRandomQuote = () => {
     return QUOTES[Math.floor(Math.random() * QUOTES.length)];
@@ -88,10 +89,9 @@ function App() {
           />
         } />
         {/* <Route path='/signup' component={SignupPage}/> */}
-        <Route exact path='/signup' render={({ history }) => 
+        <Route path='/signup' render={({ history }) => 
           <SignupPage
             history={history}
-            // handleSignupOrLogin={this.handleSignupOrLogin} // Don't need 'this' when using function components
             handleSignupOrLogin={handleSignupOrLogin}
           />
         }/>
