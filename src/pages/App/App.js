@@ -8,6 +8,7 @@ import userService from '../../services/userService';
 import Inbox from '../../components/Inbox/Inbox'
 import Daily from '../../components/Daily/Daily'
 
+
 const QUOTES = [
   'Your brain is for having ideas, not for storing them.',
   'Until you set the priority, your priority is to set the priority.',
@@ -54,7 +55,7 @@ function App() {
             {getRandomQuote()}
           </span>
           <div>
-            <NavLink exact to='/'><i class="fas fa-seedling"/>&nbsp;&nbsp;&nbsp;DailyLog</NavLink>
+            <NavLink to='/'><i class="fas fa-seedling"/>&nbsp;&nbsp;&nbsp;DailyLog</NavLink>
             &nbsp;&nbsp;&nbsp;
             <NavLink to='/login' onClick={handleLogout}>Log Out</NavLink>
           </div>
@@ -75,26 +76,37 @@ function App() {
     <div className="App">
       {getNavbar()}
       <Switch>
+        {/* HomePage only a accessible if there is a user logged in */}
         <Route exact path="/">
+          {user ? <HomePage /> : <Redirect to="/login" />}
+        </Route>
+        {/* <Route exact path="/">
           {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
         </Route>
         {user && <Route exact path='/home' render={() =>
           <HomePage />
-        } />}
-        {/* <Route path='/login' component={LoginPage}/> */}
-        <Route path='/login' render={(props) =>
+        } />} */}
+        /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+        {/* /login and /signup paths should only be accessible if there is no user logged in */}
+        {!user && <Route path='/login'
+          render={(props) =>
           <LoginPage
             {...props}
             handleSignupOrLogin={handleSignupOrLogin}
           />
-        } />
-        {/* <Route path='/signup' component={SignupPage}/> */}
-        <Route path='/signup' render={({ history }) => 
+        } />}
+        {!user && <Route path='/signup' 
+          render={({ history }) => 
           <SignupPage
             history={history}
             handleSignupOrLogin={handleSignupOrLogin}
           />
-        }/>
+        }/>}
+        /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+        {/* Rediect requests with no routes (place this last) */}
+        <Route render={() => 
+          <Redirect to="/" />} 
+        />
       </Switch>
     </div>
   );
