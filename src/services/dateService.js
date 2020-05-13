@@ -13,6 +13,8 @@ function formatDate(dateObj) {
   return [year, month, day].join(''); // Pass any character in join as as separator
 }
 
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 // Returns an array of objects representing days of the current week, with their day name and a 'YYYYMMDD' string
 function getCurrentWeek() {
   const today = new Date();
@@ -38,8 +40,12 @@ const getMonth = (YYYYMMDD) => {
   return MONTHS[parseInt(monthNum) - 1];
 }
 
+// Returns the Monday of the current week as 'YYYYMMDD'
 const getMondayOfWeek = () => {
   const today = new Date();
+  const mondayDate = today.getDate() - today.getDay() + 1;
+  today.setDate(mondayDate);
+  return formatDate(today);
 }
 
 export default {
@@ -47,4 +53,5 @@ export default {
   getCurrentWeek,
   getDD,
   getMonth,
+  getMondayOfWeek
 };

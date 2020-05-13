@@ -10,7 +10,8 @@ const Task = ({task, deleteTask, migrateTask}) => {
       </div>
       <div className='button-container'>
         <i className="far fa-trash-alt delete" onClick={() => deleteTask(task)}></i>
-        <i className="fas fa-angle-double-right migrate" onClick={() => migrateTask(task)}></i>
+        {/* Only display migrate button for tasks in the Inbox component */}
+        {migrateTask && <i className="fas fa-angle-double-right migrate" onClick={() => migrateTask(task)}></i>}
       </div>
     </div>
   );
