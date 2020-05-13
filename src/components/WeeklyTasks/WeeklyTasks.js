@@ -10,7 +10,7 @@ function WeeklyTasks() {
   
   useEffect(() => {
     const fetchData = async () => {
-      const result = await taskAPI.index();
+      const result = await taskAPI.indexWeek();
       setTasks(result);
     };
     fetchData();

@@ -8,6 +8,7 @@ module.exports = {
     update,
     delete: deleteOne,
     // addToDay
+    indexWeek
 };
 
 // Get all tasks
@@ -32,6 +33,11 @@ function show(req, res) {
     }).catch(err => {
         res.status(400).json(err);
     });
+}
+
+async function indexWeek(req, res) {
+    const tasks = await Task.find().where('dateMigrated').ne(null);
+    res.status(200).json(tasks);
 }
 
 // Create a task
