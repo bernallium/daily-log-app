@@ -42,6 +42,7 @@
 .weekly-tasks .form-control {
   margin-top: 16px;
   margin-bottom: -6px;
+  font-size: 14px;
 }
 
 /* Color of input field when typing */
