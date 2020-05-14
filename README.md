@@ -6,13 +6,13 @@
 
 ### [Create a free account here](https://dailylog-mern.herokuapp.com/login)
 
-<img src="public/screenshots/home.png" width="1010x">
+<img src="public/screenshots/home.png" />
 <p float="left">
-  <img src="public/screenshots/signup.png" width="500x" />
-  <img src="public/screenshots/login.png" width="500x" />
+  <img src="public/screenshots/signup.png" width="433" />
+  <img src="public/screenshots/login.png" width="433" />
 </p>
 
-> **NOTE**: User authentication is accomplished via JSON Web Tokens and passwords are hashed using the `bcrypt` library
+> **NOTE**: User authentication is implemented via JSON Web Tokens and passwords are hashed using the `bcrypt` library
 
 ### Why did I create this application?
 
