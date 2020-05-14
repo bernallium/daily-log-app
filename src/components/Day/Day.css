@@ -107,6 +107,7 @@
   -webkit-appearance:none;
   box-shadow: none !important;
   padding: 0;
+  font-size: 14px;
 }
 
 .day .notes-container {
