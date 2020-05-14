@@ -35,7 +35,7 @@ const WeeklyTasks = ({weekTasks, newWeekTask, handleWeekChange, addWeekTask, del
   return (
     <div className='weekly-tasks'>
     <h2>Week <span role="img" aria-label="calendar">🗓</span></h2>
-      <form className="form-group" onSubmit={addWeekTask}>
+      <form className="form-group" autocomplete="off" onSubmit={addWeekTask}>
         <input type="text" className="form-control" name="task" placeholder="+ Add a task"
           value={newWeekTask}
           onChange={handleWeekChange}
