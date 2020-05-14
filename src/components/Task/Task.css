@@ -1,12 +1,13 @@
 .task {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   transition: all 0.2s linear;
   border-radius: 4px;
   padding-left: 4px;
   padding-right: 4px;
+  padding: 4px;
 }
 
 .task:hover {
@@ -14,19 +15,25 @@
 }
 
 .task .form-check-label {
-  /* overflow-wrap: break-word;
+  /* max-width: 25ch; */
+  max-width: 200px;
   word-wrap: break-word;
-  hyphens: auto; */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 25ch;
+  font-size: 14px;
+  padding-right: 4px;
 }
 
 .task .form-check {
   align-self: center;
   justify-content: center;
-  padding-top: 4px;
+  /* padding-top: 4px; */
+}
+
+.task .button-container {
+  display: flex;
+  margin-top: 4px;
+ 
+  /* flex-direction: column; */
+  /* background-color: rgba(0, 0, 0, 0.10); */
 }
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -34,8 +41,8 @@
 .task .delete {
   opacity: 0;
   transition: all 0.2s linear;
-  /* font-size: 116px; */
-  margin-left: 10px;
+  /* margin-left: 10px;
+  font-size: 16px; */
 }
 
 .task:hover .delete {
@@ -55,8 +62,9 @@
   opacity: 0;
   transition: all 0.2s linear;
   /* font-size: 116px; */
-  margin-left: 5px;
-  margin-right: 2px;
+  /* margin-left: 5px;
+  margin-right: 2px; */
+  margin-left: 2px;
 }
 
 .task:hover .migrate {
