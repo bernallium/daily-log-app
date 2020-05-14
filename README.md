@@ -1,6 +1,6 @@
 # DailyLog
 
-<img src="public/screenshots/home.png" width="1010x">
+<img src="https://user-images.githubusercontent.com/20956525/81897133-03c9cd00-9584-11ea-91d8-0db89affc128.png" width="1010x">
 <p float="left">
   <img src="public/screenshots/signup.png" width="500x" />
   <img src="public/screenshots/login.png" width="500x" />
