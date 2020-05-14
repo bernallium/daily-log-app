@@ -48,10 +48,17 @@ const getMondayOfWeek = () => {
   return formatDate(today);
 }
 
+// Returns the Monday of the current week as 'YYYYMMDD'
+const getToday = () => {
+  const today = new Date();
+  return formatDate(today);
+}
+
 export default {
   formatDate,
   getCurrentWeek,
   getDD,
   getMonth,
-  getMondayOfWeek
+  getMondayOfWeek,
+  getToday
 };
