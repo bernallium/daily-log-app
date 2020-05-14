@@ -6,10 +6,8 @@ function formatDate(dateObj) {
   let month = '' + (dateObj.getMonth() + 1);
   let day = '' + dateObj.getDate();
   const year = dateObj.getFullYear();
-
   if (month.length < 2) month = '0' + month;
   if (day.length < 2) day = '0' + day;
-
   return [year, month, day].join(''); // Pass any character in join as as separator
 }
 
@@ -48,7 +46,15 @@ const getMondayOfWeek = () => {
   return formatDate(today);
 }
 
-// Returns the Monday of the current week as 'YYYYMMDD'
+// Returns the Sunday of the current week as 'YYYYMMDD'
+const getSundayOfWeek = () => {
+  const today = new Date();
+  const sundayDate = today.getDate() - today.getDay() + 7;
+  today.setDate(sundayDate);
+  return formatDate(today);
+}
+
+// Returns the current day as 'YYYYMMDD'
 const getToday = () => {
   const today = new Date();
   return formatDate(today);
@@ -60,5 +66,6 @@ export default {
   getDD,
   getMonth,
   getMondayOfWeek,
+  getSundayOfWeek,
   getToday
 };

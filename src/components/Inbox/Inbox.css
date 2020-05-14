@@ -1,5 +1,5 @@
 .inbox {
-  padding: 40px;
+  padding: 20px 40px 40px 40px;
   color: #2F4F4F;
   min-width: 340px;
   max-width: 340px;
@@ -16,7 +16,8 @@
 .inbox h2 {
 	color: #2F4F4F;
 	font-size: 40px;
-	font-weight: 700;
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
 /* .inbox .btn {
@@ -44,8 +45,7 @@
 } */
 
 .inbox .form-control {
-  margin-top: 16px;
-  margin-bottom: -6px;
+  margin-top: 23.5px;
   font-size: 14px;
 }
 

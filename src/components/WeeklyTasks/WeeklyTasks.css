@@ -1,5 +1,5 @@
 .weekly-tasks {
-  padding: 40px;
+  padding: 20px 40px 40px 40px;
   color: #2F4F4F;
   min-width: 340px;
   max-width: 340px;
@@ -12,7 +12,15 @@
 .weekly-tasks h2 {
 	color: #2F4F4F;
 	font-size: 40px;
-	font-weight: 700;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.weekly-tasks h3 {
+	color: #2F4F4F;
+	font-size: 13px;
+	font-weight: 500;
 }
 
 /* .weeklyTasks .btn {
@@ -40,8 +48,7 @@
 } */
 
 .weekly-tasks .form-control {
-  margin-top: 16px;
-  margin-bottom: -6px;
+  margin-top: 0;
   font-size: 14px;
 }
 
