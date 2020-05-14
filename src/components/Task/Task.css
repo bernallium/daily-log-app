@@ -64,7 +64,8 @@
   /* font-size: 116px; */
   /* margin-left: 5px;
   margin-right: 2px; */
-  margin-left: 2px;
+  margin-left: 4px;
+  margin-right: 1px;
 }
 
 .task:hover .migrate {

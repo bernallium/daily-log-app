@@ -1,14 +1,18 @@
 # DailyLog
 
-<img src="https://user-images.githubusercontent.com/20956525/81897133-03c9cd00-9584-11ea-91d8-0db89affc128.png" width="1010x">
+**DailyLog** is a note taking and task manager application combined. Add floating tasks to your Inbox 📥. When planning out your week, *migrate* tasks from your Inbox >> to your weekly task list 📅. The process of task migrations allows you to distill information and have a clear view of the week ahead of you. The daily log section on the right provides a space where you can take any notes for a specific day. It acts as a brain dump section where you can record anything you want really.
+
+### *Plan for the future and record the past so that every day you can be more present*
+
+### [Create a free account here](https://dailylog-mern.herokuapp.com/login)
+
+<img src="public/screenshots/home.png" width="1010x">
 <p float="left">
   <img src="public/screenshots/signup.png" width="500x" />
   <img src="public/screenshots/login.png" width="500x" />
 </p>
 
-### [Create a free account here](https://dailylog-mern.herokuapp.com/login)
-
-**DailyLog** is a note taking and task manager application combined. Use it to *plan for the future and record the past so that every day you can be more present*. Add floating tasks to your Inbox  📥 and when you want to accomplish them within the current week, migrate them to the weekly task list 📅. The Day view on the right provides a space where you can take any notes for a specific day.
+> **NOTE**: User authentication is accomplished via JSON Web Tokens and passwords are hashed using the `bcrypt` library
 
 ### Why did I create this application?
 
@@ -22,7 +26,6 @@ I wanted to create an application that satisfied my needs for a note taking and 
 
 ## Next Steps
 * Add ability to add tasks to Day view
-* Task migrations between lists
 * Autmatic migrations at the end of the week
 * Monthly and yearly view navigation
 * Colour picker for tasks and notes
