@@ -6,10 +6,12 @@
 
 ### [Create a free account here](https://dailylog-mern.herokuapp.com/login)
 
-<img src="public/screenshots/home.png" />
+<img src="public/screenshots/home.png"/>
+<img src="public/screenshots/migration-demo.gif"/>
+<img src="public/screenshots/notes-demo.gif"/>
 <p float="left">
-  <img src="public/screenshots/signup.png" width="433" />
-  <img src="public/screenshots/login.png" width="433" />
+  <img src="public/screenshots/signup.png" width="433"/>
+  <img src="public/screenshots/login.png" width="433"/>
 </p>
 
 > **NOTE**: User authentication is implemented via JSON Web Tokens and passwords are hashed using the `bcrypt` library
@@ -19,6 +21,7 @@
 I wanted to create an application that satisfied my needs for a note taking and task manager application combined. There are many options on the market that attempt to acheive this but I wanted to create one that fit my needs perfectly. In particular, I wanted a history of how tasks are migrated between tiers of urgency (ie. moving a task from your Inbox, to your weekly task list, to your daily task list). I believe having a history of this movement is good for mindfulness and self-improvement.
 
 ## Built With 👨‍💻
+
 * `MongoDB/Mongoose`
 * `Express`
 * `React`
