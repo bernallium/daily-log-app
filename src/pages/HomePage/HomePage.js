@@ -57,10 +57,16 @@ const HomePage = () => {
     setTasksLength(tasksLength - 1);
   }
 
-  const migrateTask = async (taskToMigrate) => {
-    taskToMigrate.dateMigrated = dateService.getMondayOfWeek();
+  const migrateForward = async (task) => {
+    task.dateMigrated = dateService.getMondayOfWeek();
     setTasksLength(tasksLength - 1);
-    await taskAPI.update(taskToMigrate);
+    await taskAPI.update(task);
+  }
+
+  const migrateBack = async (task) => {
+    task.dateMigrated = '';
+    setTasksLength(tasksLength + 1);
+    await taskAPI.update(task);
   }
 
   return (
@@ -71,7 +77,7 @@ const HomePage = () => {
         handleInboxChange = {handleInboxChange}
         addInboxTask = {addInboxTask}
         deleteTask = {deleteTask}
-        migrateTask = {migrateTask}
+        migrateForward = {migrateForward}
       />
       <WeeklyTasks 
         weekTasks = {weekTasks}
@@ -79,6 +85,7 @@ const HomePage = () => {
         handleWeekChange = {handleWeekChange}
         addWeekTask = {addWeekTask}
         deleteTask = {deleteTask}
+        migrateBack = {migrateBack}
       />
       <Daily />
     </div>

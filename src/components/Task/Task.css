@@ -58,7 +58,7 @@
 
 /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.task .migrate {
+.task .fa-angle-double-right {
   opacity: 0;
   transition: all 0.2s linear;
   /* font-size: 116px; */
@@ -68,12 +68,35 @@
   margin-right: 1px;
 }
 
-.task:hover .migrate {
+.task:hover .fa-angle-double-right {
   opacity: 0.3;
   transition: all 0.2s linear;
 }
 
-.task .migrate:hover {
+.task .fa-angle-double-right:hover {
+  opacity: 1;
+  transition: all 0.2s linear;
+  color:  #2F4F4F
+}
+
+/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.task .fa-angle-double-left {
+  opacity: 0;
+  transition: all 0.2s linear;
+  /* font-size: 116px; */
+  /* margin-left: 5px;
+  margin-right: 2px; */
+  margin-left: 4px;
+  margin-right: 1px;
+}
+
+.task:hover .fa-angle-double-left {
+  opacity: 0.3;
+  transition: all 0.2s linear;
+}
+
+.task .fa-angle-double-left:hover {
   opacity: 1;
   transition: all 0.2s linear;
   color:  #2F4F4F

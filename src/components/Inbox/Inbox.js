@@ -2,7 +2,7 @@ import React from 'react';
 import './Inbox.css';
 import Task from '../Task/Task'
 
-const Inbox = ({inboxTasks, newInboxTask, handleInboxChange, addInboxTask, deleteTask, migrateTask}) => {
+const Inbox = ({inboxTasks, newInboxTask, handleInboxChange, addInboxTask, deleteTask, migrateForward}) => {
   return (
     <div className='inbox'>
       <h2>Inbox <span role="img" aria-label="inbox">📥</span></h2>
@@ -18,7 +18,7 @@ const Inbox = ({inboxTasks, newInboxTask, handleInboxChange, addInboxTask, delet
         <Task 
           task={task} 
           deleteTask={deleteTask}
-          migrateTask={migrateTask}
+          migrateForward={migrateForward}
         />
         // <div className="form-check">
         //   <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>

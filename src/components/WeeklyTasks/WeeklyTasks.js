@@ -4,7 +4,7 @@ import Task from '../Task/Task'
 import dateService from '../../services/dateService.js'
 
 
-const WeeklyTasks = ({weekTasks, newWeekTask, handleWeekChange, addWeekTask, deleteTask}) => {
+const WeeklyTasks = ({weekTasks, newWeekTask, handleWeekChange, addWeekTask, deleteTask, migrateBack}) => {
   // let [tasks, setTasks] = useState([]);
   // let [tasksLength, setTasksLength] = useState(0);
   // let [newTask, updateNewTask] = useState('');
@@ -55,7 +55,7 @@ const WeeklyTasks = ({weekTasks, newWeekTask, handleWeekChange, addWeekTask, del
         />
       </form>
       {weekTasks.map(task =>
-        <Task task={task} deleteTask={deleteTask}/>
+        <Task task={task} deleteTask={deleteTask} migrateBack={migrateBack} />
         )
       }
     </div>

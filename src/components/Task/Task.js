@@ -3,7 +3,7 @@ import './Task.css'
 import taskAPI from '../../services/taskAPI';
 import dateService from '../../services/dateService';
 
-const Task = ({task, deleteTask, migrateTask}) => {
+const Task = ({task, deleteTask, migrateForward, migrateBack}) => {
   const [isComplete, setComplete] = useState(task.complete ? true : false);
 
   const handleCheck = async (e) => {
@@ -21,7 +21,11 @@ const Task = ({task, deleteTask, migrateTask}) => {
       <div className='button-container'>
         <i className="far fa-trash-alt delete" onClick={() => deleteTask(task)}></i>
         {/* Only display migrate button for tasks in the Inbox component */}
-        {migrateTask && <i className="fas fa-angle-double-right migrate" onClick={() => migrateTask(task)}></i>}
+        {migrateForward ? 
+          <i className="fas fa-angle-double-right" onClick={() => migrateForward(task)}></i>
+          :
+          <i className="fas fa-angle-double-left" onClick={() => migrateBack(task)}></i>
+        }
       </div>
     </div>
   );
