@@ -60,12 +60,14 @@
 .day .form-group {
   margin: 0;
   display: flex;
+  margin-top: -7px;
 }
 
 .day .plus-symbol {
-  margin-left: 5px;
+  margin-left: 6px;
   margin-right: 6px;
   margin-top: 7px;
+  font-size: 14px;
 }
 
 .day .form-control {
@@ -74,11 +76,14 @@
   margin: 0;
   width: 500px;
   transition: all 0.2s linear;
+  background: transparent;
+  margin-left: 3px;
 }
 
 .day .form-control:focus {
   outline: none;
   transition: all 0.2s linear;
+  background: transparent;
 }
 
 .day:hover .form-control {
