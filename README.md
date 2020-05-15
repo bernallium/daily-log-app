@@ -6,10 +6,12 @@
 
 ### [Create a free account here](https://dailylog-mern.herokuapp.com/login)
 
-<img src="public/screenshots/home.png"/>
-<img src="public/screenshots/migration-demo.gif"/>
-<img src="public/screenshots/notes-demo.gif"/>
-<p float="left">
+<p align="center">
+  <img src="public/screenshots/home.png"/>
+  <img src="public/screenshots/migration-demo.gif"/>
+  <img src="public/screenshots/notes-demo.gif"/>
+</p>
+<p float="left" align="center">
   <img src="public/screenshots/signup.png" width="433"/>
   <img src="public/screenshots/login.png" width="433"/>
 </p>
