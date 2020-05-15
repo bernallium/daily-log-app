@@ -1,5 +1,7 @@
 .daily {
-  /* flex: 1 auto; */
-  overflow-y: scroll;
+  /* Need to prevent the daily section from horizontally scrolling under the weekly task list */
+  overflow-y: auto;
+  overflow-x: hidden;
   margin-top: 53px;
+  flex-grow: 1;
 }

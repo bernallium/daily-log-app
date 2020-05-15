@@ -15,6 +15,8 @@
   justify-content: space-evenly;
   padding-left: 40px;
   padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .App .navbar a {
@@ -26,5 +28,14 @@
 .App .navbar-text {
   font-size: 14px;
   font-style: italic;
-
 }
+
+/* @media only screen and (max-width: 800px) {
+  .App .navbar-text {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: flex-end;
+  }
+}  */
