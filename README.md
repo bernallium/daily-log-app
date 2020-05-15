@@ -2,9 +2,9 @@
 
 **DailyLog** is a note taking and task manager application combined. Add floating tasks to your Inbox 📥. When planning out your week, *migrate* tasks from your Inbox >> to your weekly task list 📅. The process of task migrations allows you to distill information and have a clear view of the week ahead of you. The daily log section on the right provides a space where you can take any notes for a specific day. It acts as a brain dump section where you can record anything you want really.
 
-### *Plan for the future and record the past so that every day you can be more present*
+#### *Plan for the future and record the past so that every day you can be more present*
 
-### [Create a free account here >>](https://dailylog-mern.herokuapp.com/login)
+#### [Create a free account here >>](https://dailylog-mern.herokuapp.com/login)
 
 <p align="center">
   <img src="public/screenshots/home.png"/>
