@@ -15,9 +15,10 @@ const Day = ({dayName, YYYYMMDD}) => {
   // let dayOfWeek = DAYS_OF_WEEK[today.getDay()];
   // let month = MONTHS[today.getMonth()];
 
-  let [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([]);
   let [notesLength, setNotesLength] = useState(0);
   let [newNote, updateNewNote] = useState('');
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,10 +52,10 @@ const Day = ({dayName, YYYYMMDD}) => {
   return (
     <div className='day'>
       <div className='day-header'>
-        <h2 className='dd'>{dateService.getDD(YYYYMMDD)}</h2>
+        <h2 className='dd' id={`${YYYYMMDD === dateService.getToday() && 'today-dd'}`}>{dateService.getDD(YYYYMMDD)}</h2>
         <div className='day-month-container'>
-          <h3 className='day-of-week'>{dayName}</h3>
-          <h3 className='month'>{dateService.getMonth(YYYYMMDD)}</h3>
+          <h3 className='day-of-week' id={`${YYYYMMDD === dateService.getToday() && 'today-day-of-week'}`}>{dayName}</h3>
+          <h3 className='month' id={`${YYYYMMDD === dateService.getToday() && 'today-month'}`}>{dateService.getMonth(YYYYMMDD)}</h3>
         </div>
       </div>
       <div className='notes-container'>
