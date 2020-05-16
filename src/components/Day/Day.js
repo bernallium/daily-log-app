@@ -50,7 +50,7 @@ const Day = ({dayName, YYYYMMDD}) => {
   }
 
   return (
-    <div className='day'>
+    <div className='day' id={`${YYYYMMDD === dateService.getToday() && 'today-day'}`}>
       <div className='day-header'>
         <h2 className='dd' id={`${YYYYMMDD === dateService.getToday() && 'today-dd'}`}>{dateService.getDD(YYYYMMDD)}</h2>
         <div className='day-month-container'>
