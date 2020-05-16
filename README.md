@@ -1,10 +1,10 @@
 # DailyLog
 
-**DailyLog** is a note taking and task manager application combined. Add floating tasks to your Inbox 📥. When planning out your week, *migrate* tasks from your Inbox >> to your weekly task list 📅. The process of task migrations allows you to distill information and have a clear view of the week ahead of you. The daily log section on the right provides a space where you can take any notes for a specific day. It acts as a brain dump section where you can record anything you want really.
+**DailyLog** is a note taking and task manager application combined. Add floating tasks to your Inbox 📥. When planning out your week, *migrate* tasks from your Inbox >> to your weekly task list 📅. The process of task migrations allows you to distill information and have a clear view of the week ahead of you. The daily log section on the right provides a space where you can take any notes for a specific day. It acts as a brain dump section where you can record anything you want really. This single page application was built using the MERN stack and interfaces with a DailyLog RESTful API.
 
 #### *Plan for the future and record the past so that every day you can be more present*
 
-#### [Create a free account here >>](https://dailylog-mern.herokuapp.com/login)
+#### [Create a free account here >>](https://dailylog-mern.herokuapp.com/signup)
 
 <p align="center">
   <img src="public/screenshots/home.png"/>
@@ -20,7 +20,7 @@
 
 ### Why did I create this application?
 
-I wanted to create an application that satisfied my needs for a note taking and task manager application combined. There are many options on the market that attempt to acheive this but I wanted to create one that fit my needs perfectly. In particular, I wanted a history of how tasks are migrated between tiers of urgency (ie. moving a task from your Inbox, to your weekly task list, to your daily task list). I believe having a history of this movement is good for mindfulness and self-improvement.
+I wanted to create an application that was both a note taking and task manager application combined. There are a few options on the market that attempt to acheive this but I wanted to create one that was easy to use and understand.
 
 ## Built With 👨‍💻
 
