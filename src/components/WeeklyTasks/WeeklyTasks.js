@@ -34,14 +34,14 @@ const WeeklyTasks = ({weekTasks, newWeekTask, handleWeekChange, addWeekTask, del
   //   taskAPI.delete(taskToDelete);
   // }
 
-  const monday = dateService.getMondayOfWeek();
-  const sunday = dateService.getSundayOfWeek();
+  const firstDay = dateService.getCurrentWeek()[0].YYYYMMDD
+  const lastDay = dateService.getCurrentWeek()[6].YYYYMMDD;
 
-  const weekHeader = `${dateService.getMonth(monday)} 
-  ${dateService.getDD(monday)} 
-  - ${dateService.getMonth(monday) === dateService.getMonth(sunday) ? `` : `dateService.getMonth(sunday)`} 
-  ${dateService.getDD(sunday)} 
-  ${monday.slice(0, 4)}`
+  const weekHeader = `${dateService.getMonth(firstDay)} 
+  ${dateService.getDD(firstDay)} 
+  - ${dateService.getMonth(firstDay) === dateService.getMonth(lastDay) ? `` : `dateService.getMonth(sunday)`} 
+  ${dateService.getDD(lastDay)} 
+  ${firstDay.slice(0, 4)}`
 
   return (
     <div className='weekly-tasks'>

@@ -16,8 +16,9 @@ function formatDate(dateObj) {
 // Returns an array of objects representing days of the current week, with their day name and a 'YYYYMMDD' string
 function getCurrentWeek() {
   const today = new Date();
-  const sundayDate = today.getDate() - today.getDay();
-  const firstDay = 1; // 0 --> 6, Sunday --> Saturday
+  const firstDay = 1; // 0: Sunday, 1: Monday
+  let sundayDate = today.getDate() - today.getDay();
+  if (today.getDay() === firstDay - 1) sundayDate = sundayDate - 7;
   return DAYS_OF_WEEK.map((dayName, idx) => {
     const nextDay = new Date();
     nextDay.setDate(sundayDate + idx + firstDay);
@@ -38,19 +39,21 @@ const getMonth = (YYYYMMDD) => {
   return MONTHS[parseInt(monthNum) - 1];
 }
 
-// Returns the Monday of the current week as 'YYYYMMDD'
-const getMondayOfWeek = () => {
-  const today = new Date();
-  const mondayDate = today.getDate() - today.getDay() + 1;
-  today.setDate(mondayDate);
+const getFirstDayOfWeek = () => {
+  const today = new Date(2020, 4, 17);
+  const firstDay = 1; // 0: Sunday, 1: Monday
+  let firstDayDate = today.getDate() - today.getDay();
+  if (today.getDay() === firstDay - 1) firstDayDate = firstDayDate - 7;
+  today.setDate(firstDayDate + firstDay);
   return formatDate(today);
 }
 
-// Returns the Sunday of the current week as 'YYYYMMDD'
-const getSundayOfWeek = () => {
-  const today = new Date();
-  const sundayDate = today.getDate() - today.getDay() + 7;
-  today.setDate(sundayDate);
+const getLastDayOfWeek = () => {
+  const today = new Date(2020, 4, 1);
+  const firstDay = 1; // 0: Sunday, 1: Monday
+  let lastDayDate = today.getDate() - today.getDay();
+  if (today.getDay() === firstDay - 1) lastDayDate = lastDayDate - 7;
+  today.setDate(lastDayDate + firstDay + 6);
   return formatDate(today);
 }
 
@@ -65,7 +68,5 @@ export default {
   getCurrentWeek,
   getDD,
   getMonth,
-  getMondayOfWeek,
-  getSundayOfWeek,
   getToday
 };

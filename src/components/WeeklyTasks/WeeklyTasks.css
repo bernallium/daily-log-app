@@ -1,8 +1,8 @@
 .weekly-tasks {
   padding: 20px 40px 40px 40px;
   color: #2F4F4F;
-  min-width: 340px;
-  max-width: 340px;
+  width: 340px;
+  flex: 0 0 auto;
   border-right: 1px solid rgb(230, 230, 230);
   background-color: whitesmoke;
   overflow-y: scroll; 
