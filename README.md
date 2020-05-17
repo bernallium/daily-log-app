@@ -7,7 +7,7 @@
 #### [Create a free account here >>](https://dailylog-mern.herokuapp.com/signup)
 
 <p align="center">
-  <img src="public/screenshots/home.png"/>
+  <img src="public/screenshots/home-tutorial.png"/>
   <img src="public/screenshots/migration-demo.gif"/>
   <img src="public/screenshots/notes-demo.gif"/>
 </p>
