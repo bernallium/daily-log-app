@@ -39,24 +39,6 @@ const getMonth = (YYYYMMDD) => {
   return MONTHS[parseInt(monthNum) - 1];
 }
 
-const getFirstDayOfWeek = () => {
-  const today = new Date(2020, 4, 17);
-  const firstDay = 1; // 0: Sunday, 1: Monday
-  let firstDayDate = today.getDate() - today.getDay();
-  if (today.getDay() === firstDay - 1) firstDayDate = firstDayDate - 7;
-  today.setDate(firstDayDate + firstDay);
-  return formatDate(today);
-}
-
-const getLastDayOfWeek = () => {
-  const today = new Date(2020, 4, 1);
-  const firstDay = 1; // 0: Sunday, 1: Monday
-  let lastDayDate = today.getDate() - today.getDay();
-  if (today.getDay() === firstDay - 1) lastDayDate = lastDayDate - 7;
-  today.setDate(lastDayDate + firstDay + 6);
-  return formatDate(today);
-}
-
 // Returns the current day as 'YYYYMMDD'
 const getToday = () => {
   const today = new Date();

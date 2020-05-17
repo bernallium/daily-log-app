@@ -30,7 +30,7 @@
 }
 
 
-.day .day-of-week { 
+.day .day-name { 
   font-size: 16px;
   font-weight: 500;
   margin: 0;
@@ -56,7 +56,7 @@
   /* background-color: rgb(250, 250, 250); */
 }
 
-#today-dd, #today-day-of-week, #today-month {
+#today-dd, #today-day-name, #today-month {
   color: #EC5D57;
 }
 
@@ -64,7 +64,7 @@
   font-weight: 750;
 } 
 
-#today-day-of-week {
+#today-day-name {
   margin-top: -2px;
   font-weight: 600;
 }
