@@ -45,10 +45,28 @@ const getToday = () => {
   return formatDate(today);
 }
 
+const getFirstDayOfWeek = () => {
+  return getCurrentWeek()[0].YYYYMMDD;
+}
+
+const getLastDayOfWeek = () => {
+  return getCurrentWeek()[6].YYYYMMDD;
+}
+
+// Returns the Monday of the current week as 'YYYYMMDD'
+// NOTE: Use this to set dates for migrations
+const getMondayOfWeek = () => {
+  const today = new Date();
+  const mondayDate = today.getDate() - today.getDay() + 1;
+  today.setDate(mondayDate);
+  return formatDate(today);
+}
+
 export default {
   formatDate,
   getCurrentWeek,
   getDD,
   getMonth,
-  getToday
+  getToday,
+  getMondayOfWeek
 };
