@@ -1,7 +1,7 @@
 .task {
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   transition: all 0.2s linear;
   border-radius: 4px;

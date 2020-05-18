@@ -77,13 +77,7 @@ function App() {
         <Route exact path="/">
           {user ? <HomePage /> : <Redirect to="/login" />}
         </Route>
-        {/* <Route exact path="/">
-          {user ? <Redirect to="/home" /> : <Redirect to="/login" />}
-        </Route>
-        {user && <Route exact path='/home' render={() =>
-          <HomePage />
-        } />} */}
-        /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+        {/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */}
         {/* /login and /signup paths should only be accessible if there is no user logged in */}
         {!user && <Route path='/login'
           render={(props) =>
@@ -99,7 +93,7 @@ function App() {
             handleSignupOrLogin={handleSignupOrLogin}
           />
         }/>}
-        /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+        {/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */}
         {/* Rediect requests with no routes (place this last) */}
         <Route render={() => 
           <Redirect to="/" />} 
