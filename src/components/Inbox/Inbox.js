@@ -15,23 +15,13 @@ const Inbox = ({inboxTasks, newInboxTask, handleInboxChange, addInboxTask, delet
         />
       </form>
       {inboxTasks.map(task =>
-        <Task 
+        <Task
+          key={task._id}
           task={task} 
           deleteTask={deleteTask}
           migrateForward={migrateForward}
         />
-        // <div className="form-check">
-        //   <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-        //   <label className="form-check-label" for="defaultCheck1">
-        //     {task.task}
-        //   </label>
-        // </div>
-        // <div class="custom-control custom-checkbox">
-        //   <input type="checkbox" class="custom-control-input" id="customControlValidation1" required/>
-        //   <label class="custom-control-label" for="customControlValidation1">{task.task}</label>
-        // </div>
-        )
-      }
+      )}
     </div>
   );
 }

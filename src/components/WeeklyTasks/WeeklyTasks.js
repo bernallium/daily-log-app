@@ -55,9 +55,13 @@ const WeeklyTasks = ({weekTasks, newWeekTask, handleWeekChange, addWeekTask, del
         />
       </form>
       {weekTasks.map(task =>
-        <Task task={task} deleteTask={deleteTask} migrateBack={migrateBack} />
-        )
-      }
+        <Task
+          key={task._id}
+          task={task} 
+          deleteTask={deleteTask} 
+          migrateBack={migrateBack}
+        /> 
+      )}
     </div>
   );
 }

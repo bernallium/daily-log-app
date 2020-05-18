@@ -9,6 +9,7 @@ const Daily = () => {
       {dateService.getCurrentWeek().map(dayObj => 
         <Day
           {...dayObj}
+          key={dayObj.YYYYMMDD}
           // dayName={dayObj.dayName} 
           // YYYYMMDD={dayObj.YYYYMMDD}
         />
