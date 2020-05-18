@@ -7,7 +7,7 @@ const Inbox = ({inboxTasks, newInboxTask, handleInboxChange, addInboxTask, delet
     <div className='inbox'>
       <h2>Inbox <span role="img" aria-label="inbox">📥</span></h2>
       {/* {showButton && <div className='btn btn-primary' onClick={() => setShow(false)}>+ Add a task</div>} */}
-      <form className="form-group" autocomplete="off" onSubmit={addInboxTask}>
+      <form className="form-group" autoComplete="off" onSubmit={addInboxTask}>
         <input type="text" className="form-control" name="task" placeholder="+ Add a task"
           value={newInboxTask}
           onChange={handleInboxChange}

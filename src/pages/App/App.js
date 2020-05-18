@@ -51,11 +51,11 @@ function App() {
     if (user) {
       return (
         <nav className='navbar navbar-expand-lg navbar-light d-flex justify-content-between fixed-top'>
-          <span class="navbar-text">
+          <span className="navbar-text">
             {getRandomQuote()}
           </span>
           <div>
-            <NavLink to='/'><i class="fas fa-seedling"/>&nbsp;&nbsp;&nbsp;DailyLog</NavLink>
+            <NavLink to='/'><i className="fas fa-seedling"/>&nbsp;&nbsp;&nbsp;DailyLog</NavLink>
             &nbsp;&nbsp;&nbsp;
             <NavLink to='/login' onClick={handleLogout}>Log Out</NavLink>
           </div>
