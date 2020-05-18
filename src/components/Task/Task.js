@@ -15,8 +15,8 @@ const Task = ({task, deleteTask, migrateForward, migrateBack}) => {
   return (
     <div className='task'>
       <div className="form-check">
-        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" checked={isComplete} onChange={handleCheck}/>
-        <label className="form-check-label" for="defaultCheck1">{task.task}</label>
+        <input className="form-check-input" type="checkbox" value="" checked={isComplete} onChange={handleCheck}/>
+        <label className="form-check-label">{task.task}</label>
       </div>
       <div className='button-container'>
         <i className="far fa-trash-alt delete" onClick={() => deleteTask(task)}></i>

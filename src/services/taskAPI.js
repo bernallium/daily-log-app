@@ -6,12 +6,10 @@ const BASE_URL = '/api/tasks';
 // }
 
 async function index() {
-  console.log('taskAPI: index');
   return await fetch(BASE_URL).then(res => res.json());
 }
 
 async function indexWeek() {
-  console.log('taskAPI: indexWeek');
   return await fetch(`${BASE_URL}/week/1`).then(res => res.json())
 }
 

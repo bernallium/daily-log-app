@@ -21,14 +21,12 @@ function update(note) {
 }
 
 const deleteOne = async (note) => {
-  console.log('noteAPI: delete');
   return await fetch(`${BASE_URL}/${note._id}`, {
     method: 'DELETE'
   }).then(res => res.json());
 }
 
 const showDay = async (YYYYMMDD) => {
-  console.log('noteAPI: showDay');
   return await fetch(`${BASE_URL}/${YYYYMMDD}`)
 .then(res => res.json());
 }

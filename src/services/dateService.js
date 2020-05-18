@@ -68,5 +68,7 @@ export default {
   getDD,
   getMonth,
   getToday,
+  getFirstDayOfWeek,
+  getLastDayOfWeek,
   getMondayOfWeek
 };
