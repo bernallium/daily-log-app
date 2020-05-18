@@ -5,9 +5,6 @@ import HomePage from '../HomePage/HomePage.js'
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../services/userService';
-import Inbox from '../../components/Inbox/Inbox'
-import Daily from '../../components/Daily/Daily'
-
 
 const QUOTES = [
   'Your brain is for having ideas, not for storing them.',

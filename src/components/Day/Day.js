@@ -61,7 +61,10 @@ const Day = ({dayName, YYYYMMDD}) => {
       <div className='notes-container'>
         <ul>
           {notes.map(note=>
-            <div className='note'>
+            <div 
+              key={note._id}
+              className='note'
+            >
               <li>{note.note}</li>
               <i className="far fa-trash-alt delete" onClick={() => deleteNote(note)}></i>
             </div>
